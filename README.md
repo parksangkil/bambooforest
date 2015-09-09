@@ -1,7 +1,21 @@
-##커뮤니티사이트 제작 프로젝트
+# Community Site Demo with MEAN stack
 
-글을쓰거나 각종 활동을 하면 EXP가 조금 씩 쌓인다
+Simple Korean-Style community site.
 
-EXP가 1000이 넘으면 죽창 하나가 주어진다
+## Users can:
+- write posts
+- add tags to posts
+- read posts
+- like/cancel like
+- report a post with a bamboo point
+- report a user with a bamboo point
+- read popular posts
+- comment
+- gamble on bamboo points
+- change/add nickname
+- Cloud of Tags
 
-죽창으로 마음에 안드는 사용자를 비활성화 시킬 수 있다. 
+
+This is a RESTful site with completely divided server and client.
+**All Server side code is on ./app folder**
+**All Front-end code is in ./public folder**
