@@ -3,8 +3,8 @@
 'use strict';
  
 /* Controllers */
- 
-var app = angular.module('pook');
+ var app = angular.module('bambooforest');
+
 
     // FROALA 
 

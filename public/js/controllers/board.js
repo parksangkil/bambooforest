@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-var app = angular.module('pook');
+var app = angular.module('bambooforest');
 
 
 var pages = function(current, total){
@@ -269,13 +269,13 @@ var pages = function(current, total){
 		$scope.giveMeBamboo = function(){
 			$http.get("/api/bamboo").success(function(res){
 				if(res.type === false){
-					Notification.error("Failed to get a bamboo spear...");
+					Notification.error("Failed to get a bamboo...");
 				}else if(res.status === "failed"){
-					Notification.error("Failed to get a bamboo spear..");
+					Notification.error("Failed to get a bamboo...");
 				}else if(res.status === "alreadyDone"){
 					Notification.error("You already tried today, try tomorrow");
 				}else{
-					Notification.success("Success!!!! You earned a bamboo spear");
+					Notification.success("Success!!!! You earned a bamboo");
 				}
 			});
 		};

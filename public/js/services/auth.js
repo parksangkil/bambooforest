@@ -1,6 +1,7 @@
 (function(){
 	'use strict';
-	var app = angular.module('pook')
+	var app = angular.module('bambooforest');
+
 		app.factory('authService', ['$http', '$rootScope', '$localStorage', '$location', 'Base64', 'Notification', function($http, $rootScope, $localStorage, $location, Base64, Notification){
 			return {
 				signup: function(data, callback) {

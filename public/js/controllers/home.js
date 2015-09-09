@@ -4,7 +4,7 @@
  
 /* authentication Controllers */
  
-var app = angular.module('pook');
+var app = angular.module('bambooforest');
 
 //injection 안쓰이는것 나중에 수정해야됨
 	app.controller('homeCtrl',['$scope','$http', '$localStorage', 'Notification', 

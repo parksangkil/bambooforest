@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 
-var app = angular.module('pook');
+var app = angular.module('bambooforest');
 
 
 	app.controller('readCtrl',["$scope", "$http", "$location", "$routeParams", "$route", "$sce", "Notification",

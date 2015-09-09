@@ -1,5 +1,6 @@
 (function(){
-	var app = angular.module('pook')
+	var app = angular.module('bambooforest');
+
 	app.controller('userCtrl', ['$scope', '$rootScope', '$http', '$routeParams', 'Notification', '$location', function($scope, $rootScope, $http, $routeParams, Notification, $location){
 		$http.get("/api/user/"+$routeParams.user_id).success(function(res){
 			if(res.type === false){

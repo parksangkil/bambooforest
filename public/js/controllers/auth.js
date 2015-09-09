@@ -4,7 +4,8 @@
  
 /* authentication Controllers */
  
-var app = angular.module('pook');
+var app = angular.module('bambooforest');
+
 
 String.prototype.isAlphaNumeric = function() {
   var regExp = /^[A-Za-z0-9]+$/;

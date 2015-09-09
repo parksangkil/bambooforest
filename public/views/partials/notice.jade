@@ -1,7 +1,7 @@
 section.content-wrapper
 	article.content
 		a(href="/intro")
-			img(src="img/main.jpg" style="background-color:#fff; margin:0 auto; width:100%; ")
+			img(src="img/panda.jpg" style="background-color:#fff; margin:0 auto; width:100%; ")
 		div.board-box
 			div.board-head
 				span {{boardTitle}}
@@ -24,12 +24,3 @@ section.content-wrapper
 				a(ng-repeat="best in bests" ng-href="/post/{{best._id}}")
 					span {{best.title}}
 					em +{{best.likes}}
-
-
-		//- script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-		//- ins(class="adsbygoogle"
-		//- 	style="display:inline-block;width:250px;height:250px"
-		//- 	data-ad-client="ca-pub-7255439667961306"
-		//- 	data-ad-slot="8544663275")
-		//- script.
-		//- 	(adsbygoogle = window.adsbygoogle || []).push({});

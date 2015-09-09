@@ -1,6 +1,7 @@
 (function(){
 	'use strict';
-	var app = angular.module('pook')
+	var app = angular.module('bambooforest');
+
 
 
 	app.directive('timeAgo', ['timeAgo', 'nowTime', function (timeAgo, nowTime) {

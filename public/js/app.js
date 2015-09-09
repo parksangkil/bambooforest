@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
-	angular.module('pook', [
+	angular.module('bambooforest', [
 		'ngStorage',
 		'ngRoute',
 		'angular-loading-bar',
