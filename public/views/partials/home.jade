@@ -1,0 +1,29 @@
+section.home
+	div.wrapper
+
+		div.logo-box(style="margin-top:80px; margin-bottom:60px;")
+			a(href="/" style="font-size:62px; text-align:center; color:white; margin:30px auto;")
+				b(style="text-algin:center; margin:0 auto;") Bamboo Forest 
+				//-img(src="img/left-logo-white.png")
+			p.slogan "the demo page"
+		div.list-box
+			div.tab
+				a(href="/best") Best Posts
+				a(href="/tags").tag-more More Tags
+			div.list
+				a(ng-repeat="post in bests" ng-href="/post/{{post._id}}")
+					//- em.tag(ng-repeat="tag in post.tags") {{tag.tag_name}}
+					em.tag {{post.tags[0].tag_name}}
+					span {{post.title}}
+					em.likes(ng-if="post.likes > 0") +{{post.likes}}
+					time {{post.created_at | timeAgo}}
+			div.more
+				a(href="/best") More Posts
+		div.intro-box
+			p.intro This is a RESTful demo community site page made by Keon.
+			p.intro Created with MEAN Stack (MongoDB, Express, AngularJS, Node.js).
+			p.intro Front-End and Back-End are all hard coded by Keon.
+			p.intro Users can write posts, upvote, tag, comment, and read popular posts.
+			p.intro Also users can mute a post or a user for a day with a bamboo spear. 
+			p.intro 
+				a(href="/intro") Click Here For More Information.

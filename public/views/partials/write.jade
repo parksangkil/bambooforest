@@ -1,0 +1,48 @@
+section.content-wrapper
+	div.content
+		div.write
+			h1 Write
+			form(ng-submit="submit()")
+				input(type="text" placeholder="Title" ng-model="title" required).write-title
+				textarea(
+					froala="options" 
+					ng-model="content" 
+					froala-event-on-paste="onPaste" 
+					froala-event-after-remove-image="afterRemoveImage" 
+					froala-event-focus="onEvent" 
+					froala-event-indent="onEvent" 
+					required)
+				//- br
+
+				//- {{myHtml}}
+
+				//- br
+				//- div(ng-bind-html="myHtml")
+				tags-input(ng-model="tags"
+					display-property="tag_name"
+					maxLength = "5"
+					max-length = 5
+					min-length = 2
+					placeholder="Tags should be more than 2 letters and less than 5. You can distinguish it by enter.")
+				
+				//- input.write-tag(type="text", placeholder="테그" ng-model="tags")
+				button(type="submit") Submit
+
+
+	aside.sidebar
+		div.side-box
+			div.side-title
+				span Populr Posts
+			div.side-list
+				a(ng-repeat="best in bests" ng-href="/post/{{best._id}}")
+					span {{best.title}}
+					em +{{best.likes}}
+
+
+		//- script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+		//- ins(class="adsbygoogle"
+		//- 	style="display:inline-block;width:250px;height:250px"
+		//- 	data-ad-client="ca-pub-7255439667961306"
+		//- 	data-ad-slot="8544663275")
+		//- script.
+		//- 	(adsbygoogle = window.adsbygoogle || []).push({});

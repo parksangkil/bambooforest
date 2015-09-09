@@ -1,0 +1,9 @@
+section.auth-content
+	div.auth-wrapper(data-ng-hide="auth")
+		h1.title Sign In
+		h2.desc "Welcome"
+		form(ng-pristine ng-valid ng-submit="signin()").signin-form
+			//- inline block 이 안먹혀서 억지로 여기다 넣음
+			input(type="text" placeholder="Username" name="username" ng-untouched ng-pristine ng-model="username")
+			input(type="password" placeholder="Password" name="password" ng-untouched ng-pristine ng-model="password")
+			button(type="submit") Sign In

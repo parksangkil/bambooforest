@@ -1,0 +1,233 @@
+$mainColor: #9a3
+
+body
+  max-width: 840px
+
+ul
+  padding-left: 80px
+  list-style: none
+
+  li
+    background: #fff
+    border-radius: 2px
+    box-shadow: 0 1px 2px rgba(#000, .1)
+    position: relative
+
+    &:not(:first-child)
+      margin-top: 20px
+
+    &:before
+      content: ''
+      border-width: 10px 10px 10px 0
+      border-style: solid
+      border-color: transparent #fff
+      position: absolute
+      top: 10px
+      left: -10px
+
+    header
+      border-bottom: 1px solid #e5e5e5
+      display: flex
+
+      *
+        display: block
+
+      h1
+        padding-left: 20px
+        font-weight: normal
+        line-height: 40px
+        flex-grow: 1
+
+        a
+          text-decoration: none
+          display: inline-block
+
+        &.author
+
+          &, & *
+            color: $mainColor
+
+          &:after
+            content: 'Author'
+            margin: 10px 0 10px 10px
+            padding: 0 5px
+            background: $mainColor
+            border-radius: 2px
+            color: #fff
+            font-size: 10px
+            font-weight: normal
+            text-transform: uppercase
+            line-height: 20px
+            position: absolute
+
+      button
+        padding: 10px
+
+        svg
+          width: 20px
+          height: 20px
+
+          *
+            fill: #999
+
+        &:hover
+          svg *
+            fill: #666
+
+        &.loved
+          svg *
+            fill: #f66
+
+      img
+        width: 60px
+        height: 60px
+        background: #fff
+        border: 4px solid #fff
+        border-radius: 2px
+        box-shadow: 0 1px 2px rgba(#000, .1)
+        position: absolute
+        top: 0
+        left: -80px
+
+    article
+      padding: 20px
+      white-space: pre-line
+      overflow-x: hidden
+
+      .reply
+        color: $mainColor
+
+      strong
+        font-weight: 500
+
+      em
+        font-style: italic
+
+      a
+        text-decoration: underline
+
+        &:hover
+          text-decoration: none
+
+      code
+        font-family: 'Source Code Pro', monospace
+
+form
+  margin-top: 20px
+  padding: 20px 20px 20px 100px
+  background: #fff
+  border-radius: 2px
+  box-shadow: 0 1px 2px rgba(#000, .1)
+  position: relative
+  flex-wrap: wrap
+  display: flex
+
+  &:before
+    content: ''
+    border-width: 10px 10px 10px 0
+    border-style: solid
+    border-color: transparent rgba(#e5e5e5, .5)
+    position: absolute
+    top: 30px
+    left: 90px
+
+  input,
+  textarea
+    padding: 9px 20px
+    width: 100%
+    background: rgba(#e5e5e5, .5)
+    display: block
+
+    &:not(:first-child)
+      margin-top: 2px
+
+    &[type='email']
+      width: 50%
+      border-right: 1px solid #fff
+
+    &[type='url']
+      width: 50%
+      border-left: 1px solid #fff
+
+    &::placeholder
+      color: #666
+
+    &.ng-dirty.ng-invalid,
+    &.ng-dirty.ng-invalid::placeholder
+      color: #f66
+
+  textarea
+    padding: 20px
+    height: 120px
+    resize: none
+
+  p
+    margin-top: 10px
+    padding: 10px 0
+    width: 50%
+
+    a
+      text-decoration: underline
+
+      &:hover
+        text-decoration: none
+
+  button
+    margin: 10px auto 0
+    padding: 10px 0
+    width: 50%
+    background: $mainColor
+    border-radius: 2px
+    color: #fff
+    font-weight: normal
+    text-align: center
+    display: block
+
+  img
+    width: 60px
+    height: 60px
+    background: rgba(#e5e5e5, .5)
+    border: 4px solid rgba(#e5e5e5, .5)
+    border-radius: 2px
+    position: absolute
+    top: 20px
+    left: 20px
+
+@media (max-width: 440px)
+  ul
+    padding: 0
+
+    li
+      &:before
+        content: none
+
+      header
+        img
+          clip: rect(0,0,0,0)
+
+        h1.author:after
+          content: none
+
+  form
+    padding-left: 20px
+
+    &:before
+      content: none
+
+    img
+      clip: rect(0,0,0,0)
+
+    input,
+    textarea
+      padding: 10px
+
+    textarea
+      height: 80px
+
+    p,
+    button
+      margin: 10px 10px 0
+      width: 100%
+
+    p
+      padding: 0

@@ -1,0 +1,25 @@
+section.content-wrapper
+	article.content
+		div.bamboo
+			h1 Give Me Bamboo Spear...
+			h2 You have 5% chance to win a bamboo spear.
+			img(src="/img/hanbang.png" ng-click="giveMeBamboo()")
+
+
+
+	aside.sidebar
+		div.side-box
+			div.side-title
+				span Popular Posts
+			div.side-list
+				a(ng-repeat="best in bests" ng-href="/post/{{best._id}}")
+					span {{best.title}}
+					em +{{best.likes}}
+
+		//- script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+		//- ins(class="adsbygoogle"
+		//- 	style="display:inline-block;width:250px;height:250px;margin:30px auto 0 auto;"
+		//- 	data-ad-client="ca-pub-7255439667961306"
+		//- 	data-ad-slot="8544663275")
+		//- script.
+		//- 	(adsbygoogle = window.adsbygoogle || []).push({});

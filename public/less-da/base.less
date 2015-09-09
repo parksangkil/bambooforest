@@ -1,0 +1,145 @@
+
+/* RESPONSIVE FEATURES */
+
+// For desktops
+.visible-phone { display: none !important; }
+.visible-tablet { display: none !important; }
+.hidden-phone { }
+.hidden-tablet { }
+.hidden-desktop { display: none !important; }
+.visible-desktop { display: inherit !important; }
+// Tablets & small desktops only
+@media (min-width: 768px) and (max-width: 979px) {
+	// Hide everything else
+	.hidden-desktop { display: inherit !important; }
+	.visible-desktop { display: none !important ; }
+	.navbar{overflow:visible;}
+	// Show
+	.visible-tablet { display: inherit !important; }
+	// Hide
+	.hidden-tablet { display: none !important; }
+}
+
+// Phones only
+@media (max-width: 767px) {
+	// Hide everything else
+	.hidden-desktop { display: inherit !important; }
+	.visible-desktop { display: none !important; }
+	.navbar{overflow:visible;}
+	// Show
+	.visible-phone { display: inherit !important; } // Use inherit to restore previous behavior
+	// Hide
+	.hidden-phone { display: none !important; }
+	.content{ margin-right:0px !important; }
+}
+
+
+/* SETUP RESET */
+html,body{
+	height:100%
+}
+html{ background:#e5e5e5;}
+body{
+	color:#000;
+	text-align: left;
+	line-height: 1.4;
+	z-index: 0;
+	cursor:default;	
+	font-family: @body, 'Open Sans', sans-serif;  
+	font-weight:100;
+	font-size:0.85em;
+}
+*{
+	margin:0;
+	// padding:0; //이거 적용하면 왜 안되는지 모르겠음
+	background: none;
+	border:0 solid #000;
+	outline:0 solid #000;
+	border-radius: 0;
+	box-sizing: border-box;
+	box-shadow: 0 0 0 0 #000;
+	color: inherit;
+	font: inherit;
+	text-align: inherit;
+	text-rendering: geometricPrecision;
+	line-height: inherit;
+	vertical-align: top;
+	user-select:none;
+	z-index: inherit;
+	cursor: inherit;
+	-webkit-tap-highlight-color:transparent;
+	&:after,&::before {
+	.box-sizing();
+	}
+}
+a, button, 
+[type="checkbox"],
+[type="radio"],
+[type="button"]{
+	cursor:pointer;
+	color: #1eaedb;
+	&:hover{
+		color: #0fa0ce;
+	}
+}
+input, textarea{
+	user-select: text;
+	cursor: text;
+	-webkit-appearance: textfield;
+	color:black;
+}
+label{
+	color:@base;
+}
+input,textarea,button,select,
+[type="checkbox"],
+[type="radio"],
+[type="button"]{
+  &[disabled]{
+    cursor: not-allowed
+  }
+}
+
+/* CONTENT LAYOUT */
+.main{
+	max-width: 950px;
+	margin: 0 auto -155px;
+	height:auto !important;
+	min-height:100%;
+	padding: 0 8px;
+	position:relative;
+}
+.content-wrapper{
+	float:left;
+	width:100%;
+}
+.content, .sidebar{
+	.border-radius(5px);
+	border:1px solid black;
+}
+.content{
+	clear:both;
+	// overflow:auto;
+	// min-height: 100%;
+	margin-top:20px;
+	margin-right:270px;
+	padding:7px; 
+}
+.sidebar{
+	width:250px;
+	float:right;
+	overflow: hidden;
+	// min-height: 500px;
+	margin-top:20px;
+	margin-left: -250px;
+	padding:5px;
+}
+
+.footer{
+	text-align:center;
+	height:155px;
+	border-top: 1px solid #ddd;
+	padding: 10px 0;
+	background:#eee;
+	color:#868b8d;
+}

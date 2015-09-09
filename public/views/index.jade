@@ -1,0 +1,152 @@
+doctype html
+html
+	head
+		base(href="/")
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="description" content="This is official bamboo Forest Page.")
+		meta(name="author" content="BambooForest")
+		title BambooForest
+
+
+		//- froala
+		link(rel='stylesheet', href='/froala/css/froala_content.min.css')
+		//- link(rel='stylesheet', href='/froala/css/froala_editor.min.css')
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/1.2.8/css/froala_editor.min.css")
+		link(rel='stylesheet', href='/froala/css/froala_style.min.css')
+		link(rel='stylesheet', href='/css/angular-ui-notification.min.css') 
+
+		//- link(rel="stylesheet" href="/font/noto-sans.css")
+		link(rel="stylesheet" href="/css/normalize.css")
+		link(rel="stylesheet" href="/css/ng-tags-input.min.css")
+		link(rel="stylesheet" href="/less/style.css")
+		link(rel="stylesheet" href="/css/error.css")
+		link(rel="stylesheet" href="/font-awesome-4.3/css/font-awesome.css")
+
+	body(ng-app="pook")
+
+
+		header(ng-controller="authCtrl")
+
+			nav
+				ul.sm-hidden.desktop-menu
+					li.icon-box 
+						a(href="/")
+							img.big-icon(src="img/logo.png")
+					li.item
+						a(href="/notices") Notice
+					li.item
+						a(href="/best") Best
+					li.item
+						a(href="/board") Board
+					li.item
+						a(href="/bamboo") Bamboo
+					li.item
+						a(href="/write" data-ng-show="auth") Write
+					li.auth(data-ng-hide="auth")
+						a(href="/signin").signin Login
+						a(href="/signup").signup SignUp
+					li.item.user(data-ng-show="auth")
+						a(href="/user/{{auth.user_id}}") {{auth.username}}
+						a(ng-click="signout()") Logout
+				ul.sm-show.mobile-menu
+					li.menuToggle
+						i.fa.fa-bars.fa-2x.fa-inverse#menuToggle
+					li.mobile-logo
+						a(href="/")
+							img(src="img/logo.png")
+		ul.mobile-nav.sm-show
+			li.item
+				a(href="/notices") Notice
+			li.item
+				a(href="/best") Best
+			li.item
+				a(href="/board") Board
+			li.item
+				a(href="/bamboo") Bamboo
+			li.item
+				a(href="/write" data-ng-show="auth") Write
+			li.item(data-ng-hide="auth")
+				a(href="/signin") Login
+			li.item(data-ng-hide="auth")
+				a(href="/signup") SignUp
+			li.item(data-ng-show="auth")
+				a(href="/user/{{auth.user_id}}") {{auth.username}}
+			li.item(data-ng-show="auth")
+				a(ng-click="signout()") Logout
+		main
+			ng-view
+		footer
+			div
+				a(href="/intro") About
+				a(href="/contact") Contact
+				a(href="/license") License
+
+	
+
+	
+	//- CDN 소스
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
+	script(src="https://code.angularjs.org/1.4.3/angular-route.min.js")
+	script(src="https://code.angularjs.org/1.4.3/angular-animate.min.js")
+	script(src='/js/script.js')
+	//- 로컬소스
+	//- script(src='/lib/angular.js')
+	//- script(src='/lib/angular-route.min.js')
+	//- script(src='/lib/angular-animate.min.js')
+	script(src='/lib/froala-sanitize.js')
+	script(src='/lib/angular-froala.min.js')
+	script(src='/lib/loading-bar.min.js')
+	script(src='/lib/ngStorage.min.js')
+	script(src='/lib/angular-ui-notification.min.js') 
+	script(src='/lib/ng-tags-input.min.js')
+
+	//- google analytics
+	script.
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-65209371-2', 'auto');
+		ga('send', 'pageview');
+
+	//- froala
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/1.2.8/js/froala_editor.min.js")
+
+	//- script(src='/froala/js/froala_editor.min.js') 
+	script(src='/froala/js/plugins/block_styles.min.js')
+	script(src='/froala/js/plugins/char_counter.min.js')
+	script(src='/froala/js/plugins/colors.min.js')
+	script(src='/froala/js/plugins/entities.min.js')
+	script(src='/froala/js/plugins/file_upload.min.js')
+	script(src='/froala/js/plugins/font_fa.family.min.js')
+	script(src='/froala/js/plugins/font_size.min.js')
+	script(src='/froala/js/plugins/fullscreen.min.js')
+	script(src='/froala/js/plugins/inline_styles.min.js')
+	script(src='/froala/js/plugins/lists.min.js')
+	script(src='/froala/js/plugins/media_manager.min.js')
+	script(src='/froala/js/plugins/tables.min.js')
+	script(src='/froala/js/plugins/urls.min.js')
+	script(src='/froala/js/plugins/video.min.js')
+	//- language
+	script(src='/froala/js/langs/ko.js')
+	//- angular froala
+	script(src='/lib/angular-froala.js')
+	script(src='/lib/froala-sanitize.js')
+	//- end froala	
+
+	script(src='/js/app.js')
+
+	script(src='/js/controllers/auth.js')
+	script(src='/js/controllers/home.js')
+	script(src='/js/controllers/user.js')
+	script(src='/js/controllers/write.js')
+	script(src='/js/controllers/board.js')
+	script(src='/js/controllers/read.js')
+	
+	script(src='/js/services/auth.js')
+	script(src='/js/services/timeago.js')
+	//- script(src='/js/services/board.js')

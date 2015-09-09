@@ -1,0 +1,24 @@
+section.content-wrapper
+	article.content
+		div.post
+			div.post-head
+				div.main-info
+					div.post-title
+						h1 {{notice.title}}
+					div.author-info
+						a(ng-href="/user/{{notice.author.user_id}}").username {{notice.author.username}}
+				div.sub-info
+					span pook.com/notice/{{notice._id}}
+					time {{notice.created_at | timeAgo}}
+			div.post-content
+				//- div( ng-bind-html="{{content}}")
+				{{ notice.content }}
+
+	aside.sidebar
+		div.side-box
+			div.side-title
+				span Popular Posts
+			div.side-list
+				a(ng-repeat="best in bests" ng-href="/post/{{best._id}}")
+					span {{best.title}}
+					em +{{best.likes}}

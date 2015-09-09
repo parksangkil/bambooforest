@@ -1,0 +1,6 @@
+section.content-wrapper
+	div.box
+		h2.head Cloud of Tags.
+		div.body
+			div.box
+				a(ng-repeat="tag in tags" ng-href="/posts/tags/{{tag.tag_name}}").tag {{tag.tag_name}}

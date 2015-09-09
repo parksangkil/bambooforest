@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="대한죽창연합회 공식 홈페이지입니다." name="description">
+    <meta content="죽창연합회" name="author">
+
+    <title>푹</title>
+    <link href="/font/noto-sans.css" rel="stylesheet">
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/less/style.css" rel="stylesheet">
+    <link href="/css/error.css" rel="stylesheet">
+</head>
+
+<body class="ng-scope">
+    <header class="ng-scope">
+        <nav>
+            <ul>
+                <li class="icon-box">
+                    <a href="/"><img class="big-icon" src="img/logo.png"></a>
+                </li>
+
+                <li class="item">
+                    <a href="/notices">공지사항</a>
+                </li>
+
+                <li class="item">
+                    <a href="/best">베스트</a>
+                </li>
+
+                <li class="item">
+                    <a href="/board">잡담게시판</a>
+                </li>
+
+                <li class="item">
+                    <a href="/bamboo">죽창을다오</a>
+                </li>
+
+                <li class="item">
+                    <a class="ng-hide" data-ng-show="auth" href=
+                    "/write">글쓰기</a>
+                </li>
+
+                <li class="auth" data-ng-hide="auth">
+                    <a class="signin" href="/signin">로그인</a><a class="signup"
+                    href="/signup">회원가입</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ngView: undefined -->
+
+        <section class="error ng-scope">
+            <h1>404</h1>
+
+            <h2>페이지를 찾을 수 없습니다!!!!!!!</h2>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a href="/intro">대한죽창연합회 소개</a><a href="/contact">문의</a><a href=
+            "/license">라이센스</a>
+        </div>
+    </footer>
+</body>
+</html>

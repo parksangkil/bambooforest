@@ -1,0 +1,42 @@
+section.content-wrapper
+	article.content
+		//- div(style="background-color:gray;width:468px; height:60px; margin:10px auto;")
+		div.tag-box(data-ng-hide="best")
+			div.tag-intro
+				span Pick a Tag of Your Interest
+			div.tag-content
+				a(ng-repeat="tag in tags" ng-href="/posts/tags/{{tag.tag_name}}").tag {{tag.tag_name}}
+				a(href="/tags").more-tag More Tags
+
+		div.board-box
+			div.tab(ng-show="tagBoardTitle")
+				a.tag(ng-href="/posts/tags/{{tagBoardTitle}}") {{tagBoardTitle}}
+			div.board-head(ng-show="boardTitle")
+				span {{boardTitle}}
+			div.board
+				a(ng-repeat="post in posts" ng-href="/post/{{post._id}}")
+					//- em.tag(ng-repeat="tag in post.tags") {{tag.tag_name}}
+					em.tag {{post.tags[0].tag_name}}
+					span {{post.title}}
+					em.likes(ng-if="post.likes > 0") +{{post.likes}}
+					div
+						em.username {{post.author.username}}
+						time {{post.created_at | timeAgo}}	
+			div.page
+				a(href="#" ng-repeat="page in pages" ng-click="paging(page)") {{page}}
+
+	aside.sidebar
+		div.side-box
+			div.side-title
+				span Popular Posts
+			div.side-list
+				a(ng-repeat="best in bests" ng-href="/post/{{best._id}}")
+					span {{best.title}}
+					em +{{best.likes}}
+		script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+		//- ins(class="adsbygoogle"
+		//- 	style="display:inline-block;width:250px;height:250px;margin:30px auto 0 auto;"
+		//- 	data-ad-client="ca-pub-7255439667961306"
+		//- 	data-ad-slot="8544663275")
+		//- script.
+		//- 	(adsbygoogle = window.adsbygoogle || []).push({});

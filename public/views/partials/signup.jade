@@ -1,0 +1,12 @@
+section.auth-content
+	div.auth-wrapper(data-ng-hide="auth")
+		h1.title Sign Up
+		h2.desc Welcome!.
+			<br />
+			a(href="/bamboo") You can test your luck here, see if you can get a bamboo spear.
+		form(ng-pristine ng-valid ng-submit="signup()").signup-form
+			input(type="text" placeholder="Username" name="username" ng-untouched ng-pristine ng-model="username")
+			input(type="password" placeholder="Password" name="password" ng-untouched ng-pristine ng-model="password")
+			input(type="password" placeholder="Confirm" name="confirm" ng-untouched ng-pristine ng-model="confirm")
+			input(type="email" placeholder="Email" name="email" ng-untouched ng-pristine ng-model="email")
+			button(type="submit") Sign Up

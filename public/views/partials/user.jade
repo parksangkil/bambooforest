@@ -1,0 +1,51 @@
+section.content-wrapper
+	article.content
+		div.spec
+			div.userData
+				h1(ng-if="userData.nickname") {{userData.nickname}}'s Personal Page
+				h1(ng-if="!userData.nickname"){{userData.username}}'s Personal Page
+
+				br
+				h2(ng-if="userData.isPooked") [The User is Deactivated for Today.]
+			p I put panda image just to fill up the empty space.
+			img(src="img/panda.jpg" style="width:100%;")
+			button.button(ng-click="modifyUserData()" ng-if="userData.isMe") Edit Info
+			div(ng-if="modify && userData.isMe").changeNickname
+				span Add/Change Nickname:
+				input(type="text" ng-model="nickname") 
+				button.button(ng-if="nickname" ng-click="changeNickname(nickname)") Change Nickname to: {{nickname}}
+			//- span {{userData}}
+			//- p {{auth}}
+
+			div.likepook(ng-if="!userData.isMe")
+				//- button(ng-click="like()") dsfsd{{likeStatus}}
+				button(ng-click="pook()" style="width:100%;" ng-if="!userData.isPooked") pook
+					img(src="img/logo-1-24.png")
+
+
+
+
+	aside.sidebar
+
+		div.side-box
+			div.side-title
+				span User Information
+			div.side-list
+				p Experience: {{userData.spec.exp}}
+				p Bamboo Spear: {{userData.spec.bamboo}}
+
+		div.side-box
+			div.side-title
+				span Popular Posts
+			div.side-list
+				a(ng-repeat="best in bests" ng-href="/post/{{best._id}}")
+					span {{best.title}}
+					em +{{best.likes}}
+
+		//- script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+		//- ins(class="adsbygoogle"
+		//- 	style="display:inline-block;width:250px;height:250px;margin:30px auto 0 auto;"
+		//- 	data-ad-client="ca-pub-7255439667961306"
+		//- 	data-ad-slot="8544663275")
+		//- script.
+		//- 	(adsbygoogle = window.adsbygoogle || []).push({});

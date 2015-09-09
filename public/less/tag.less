@@ -1,0 +1,91 @@
+// body {
+//   font-family: Arial;
+// }
+
+body.js input.tagger {
+  display: none;
+}
+
+body:not(.js) input.tagger + div.tagger-list {
+  display: none;
+}
+
+div.tagger-list, input.tagger {
+  border: 1px solid black;
+  position: relative;
+  
+  min-width: 150px;
+  max-width: 400px;
+  
+  margin: 5px 2px;
+  
+  min-height: 23px;
+  padding: 2px 0 0 6px;
+}
+
+div.tagger-list .tagger-add {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  padding: 0 6px;
+  margin: 0;
+  
+  border: 0;
+  background: transparent;
+  line-height: 27px;
+  overflow: hidden;
+  
+  font-size: 14px;
+  font-family: Verdana;
+  
+  box-sizing: border-box;
+  
+  z-index: 1;
+  resize: none;
+  
+  width: 100%;
+  height: 26px;
+}
+
+div.tagger-list .tagger-add:focus {
+  outline: none;
+}
+
+div.tagger-list .tag {
+  display: inline-block;
+  background: #e67e22;
+  color: white;
+  
+  position: relative;
+  z-index: 2;
+  
+  user-select: none;
+  
+  vertical-align: middle;
+  min-height: 15px;
+  padding: 2px 5px;
+  
+  font-size: 13px;
+  line-height: 15px;
+  
+  margin: 0 5px 3px 0;
+  cursor: pointer;
+  
+  word-break: break-all;
+  overflow: hidden;
+  
+  transition: background, width 1s, 0.2s ease-out;
+}
+
+div.tagger-list .tag.animate {
+  word-break: initial;
+}
+
+div.tagger-list .tag:after {
+  content: " ×";
+}
+
+div.tagger-list .tag:hover {
+  background: #F0671D;
+}

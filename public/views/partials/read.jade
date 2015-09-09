@@ -1,0 +1,59 @@
+section.content-wrapper
+	article.content
+		div.post
+			div.post-head
+				div.main-info
+					div.post-title
+						h1 {{post.title}}
+					div.author-info
+						a(ng-href="/user/{{post.author.user_id}}").username {{post.author.username}}
+				div.sub-info
+					a.tag(ng-repeat="tag in post.tags" ng-href="/posts/tags/{{tag.tag_name}}") {{tag.tag_name}}
+					//- span link
+					time {{post.created_at | timeAgo}}
+			div.post-content
+				div( ng-bind-html="post.content")
+				//- {{ post.content }}
+			div.post-footer(data-ng-show="auth" ng-if="!pooked")
+				button(ng-click="like()") {{likeStatus}}
+				button(ng-click="pook()")
+					img(src="img/logo-1-24.png")
+
+			//- script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+			//- ins(class="adsbygoogle"
+			//- 	style="display:block;width:468px;height:60px;margin:10px auto;"
+			//- 	data-ad-client="ca-pub-7255439667961306"
+			//- 	data-ad-slot="6928329278")
+			//- script.
+			//- 	(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+			div.comment-box
+				div.comment(ng-repeat="comment in comments")
+					div.comment-info
+						a(ng-href="/user/{{comment.author.user_id}}").username {{comment.author.username}}
+						time.timeago {{comment.created_at | timeAgo}}
+					div.comment-content
+						pre {{comment.content}}
+			div.write-comment(data-ng-show="auth")
+				form(ng-submit="submit()")
+					textarea(placeholder="Write a comment for this post. You should write more than 5 letters." ng-model="comment")
+					button(type="submit") {{500 - comment.length}} Letters Left
+
+
+	aside.sidebar
+		div.side-box
+			div.side-title
+				span Popular Posts
+			div.side-list
+				a(ng-repeat="best in bests" ng-href="/post/{{best._id}}")
+					span {{best.title}}
+					em +{{best.likes}}
+
+		//- script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+		//- ins(class="adsbygoogle"
+		//- 	style="display:inline-block;width:250px;height:250px"
+		//- 	data-ad-client="ca-pub-7255439667961306"
+		//- 	data-ad-slot="8544663275")
+		//- script.
+		//- 	(adsbygoogle = window.adsbygoogle || []).push({});
